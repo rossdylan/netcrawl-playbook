@@ -1,0 +1,14 @@
+---
+- name: Install netcrawl and its dependancies
+  hosts: netcrawl
+  vars:
+    tasks: '/root/netcrawl-ansible/tasks'
+    playbooks: '/root/netcrawl-ansible/playbooks'
+- include: base.yml
+- include: elasticsearch.yml
+- include: eswrapper.yml
+- include: netcrawl.yml
+  tasks:
+  - name: Install netcrawl
+    action: shell chdir=/home/netcrawl/netcrawl/ python setup.py install
+

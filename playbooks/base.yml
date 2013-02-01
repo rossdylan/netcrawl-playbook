@@ -1,0 +1,9 @@
+---
+- name: Install base things
+  hosts: netcrawl
+  vars:
+    epel: 'http://mirrors.rit.edu/epel/6/i386/epel-release-6-8.noarch.rpm'
+  user: root
+  tasks:
+  - include: ../tasks/packages.yml
+  - include: ../tasks/users.yml

@@ -1,0 +1,6 @@
+---
+- name: Install ElasticSearch Service Wrapper
+  hosts: netcrawl
+  user: root
+  tasks:
+  - include: ../tasks/install_esw.yml

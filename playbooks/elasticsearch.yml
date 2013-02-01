@@ -1,0 +1,11 @@
+---
+- name: Install ElasticSearch
+  hosts: netcrawl
+  vars:
+    es_url: 'http://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.20.4.tar.gz'
+    es_service: 'https://github.com/elasticsearch/elasticsearch-servicewrapper/archive/master.zip'
+  user: root
+  sudo: yes
+  sudo_user: elasticsearch
+  tasks:
+  - include: ../tasks/install_es.yml

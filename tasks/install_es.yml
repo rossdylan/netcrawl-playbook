@@ -1,0 +1,17 @@
+---
+- name: Download ElasticSearch
+  action: get_url url=$es_url dest=/home/elasticsearch/
+
+- name: Extract ElasticSearch
+  action: shell chdir=/home/elasticsearch/ tar -xf ./elasticsearch-0.20.4.tar.gz
+
+- name: Download service wrapper
+  action: get_url url=$es_service dest=/home/elasticsearch/
+
+- name: Unzip service wrapper
+  action: shell chdir=/home/elasticsearch/ unzip -o ./master.zip
+
+- name: Move service wrapper into place
+  action: shell chdir=/home/elasticsearch/ mv -n ./elasticsearch-servicewrapper-master/service ./elasticsearch-0.20.4/bin/
+
+

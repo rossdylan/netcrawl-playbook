@@ -1,0 +1,10 @@
+---
+- name: Install Netcrawl
+  hosts: netcrawl
+  vars:
+    netcrawl_git: 'https://github.com/rossdylan/netcrawl.git'
+  user: root
+  sudo: yes
+  sudo_user: netcrawl
+  tasks:
+  - include: ../tasks/install_nc.yml

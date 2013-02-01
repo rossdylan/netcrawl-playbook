@@ -1,0 +1,14 @@
+---
+- name: Install pip
+  action: easy_install name=pip
+
+- name: Install netcrawls required python packages
+  action: pip name=$item
+  with_items:
+    - lxml
+    - BeautifulSoup4
+    - requests
+    - redis
+
+- name: Install a specific version of retask
+  action: pip name=retask version=0.3

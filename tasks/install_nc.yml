@@ -1,0 +1,5 @@
+---
+- name: Clone netcrawl
+  action: git dest=/home/netcrawl/netcrawl repo=$netcrawl_git
+
+

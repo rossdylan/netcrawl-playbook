@@ -1,0 +1,12 @@
+---
+- name: Install Epel
+  action: shell yum localinstall $epel -y
+
+- name: Install misc pkgs
+  action: yum name=$item state=latest
+  with_items:
+    - unzip
+    - redis
+    - git
+    - vim
+    - tmux

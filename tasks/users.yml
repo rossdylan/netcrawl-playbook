@@ -1,0 +1,6 @@
+---
+- name: Add users for netcrawl and elasticsearch
+  action: user name=$item state=present createhome=true
+  with_items:
+    - elasticsearch
+    - netcrawl
